@@ -129,13 +129,13 @@ public class SimpleComandLineMenuDrivenShapeCalcApp {
 				System.out.println();
 				for (CalculationRequest r : requests) { System.out.println(r); }
 			} else if ("5".equals(line)) {
-				List<CalculationResult> results = calculator.getAllCalculationResults();
+				List<CalculationResult> results = calculator.getAllCalculatedResults();
 				System.out.println();
 				for (CalculationResult r : results) { System.out.println(r); }
 			} else if ("6".equals(line)) {
-				System.out.println("\n\n"+ShapeCalculationsReports.formattedResultsReportByShapeByDimension(calculator.getAllCalculationResults()));
+				System.out.println("\n\n"+ShapeCalculationsReports.formattedResultsReportByShapeByDimension(calculator.getAllCalculatedResults()));
 				System.out.println("\n\n"+
-					ShapeCalculationsReports.formattedResultsReportSummary(calculator.getAllCalculationResults())
+					ShapeCalculationsReports.formattedResultsReportSummary(calculator.getAllCalculatedResults())
 					+ "\n"
 					);
 			} else if ("7".equals(line)) {
@@ -164,9 +164,9 @@ public class SimpleComandLineMenuDrivenShapeCalcApp {
 		try {
 			System.out.println("\n\n\nFINAL REPORT========================================================\n");
 			int calcsRun = calculator.runAllPendingRequestsStopOnError();
-			System.out.println(ShapeCalculationsReports.formattedResultsReportByShapeByDimension(calculator.getAllCalculationResults()));
+			System.out.println(ShapeCalculationsReports.formattedResultsReportByShapeByDimension(calculator.getAllCalculatedResults()));
 			System.out.println(
-					ShapeCalculationsReports.formattedResultsReportSummary(calculator.getAllCalculationResults())
+					ShapeCalculationsReports.formattedResultsReportSummary(calculator.getAllCalculatedResults())
 					+ "\n"
 					+ "calcsRun = " + calcsRun
 					);
